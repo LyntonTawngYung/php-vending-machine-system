@@ -1,0 +1,12 @@
+<?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+
+require_once '../app/core/Router.php';
+
+$router = new Router();
+
+$router->dispatch($_SERVER['REQUEST_URI'], $_SERVER['REQUEST_METHOD']);
