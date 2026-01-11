@@ -1,5 +1,8 @@
 FROM php:8.0-fpm
 
+# Install PDO MySQL extension
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Install Apache
 RUN apt-get update && apt-get install -y apache2 \
     && a2dismod mpm_prefork \
