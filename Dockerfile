@@ -31,4 +31,4 @@ RUN sed -i 's/80/${PORT}/g' /etc/apache2/ports.conf \
 
 EXPOSE ${PORT}
 
-CMD ["apachectl", "-D", "FOREGROUND"]
+CMD ["sh", "-c", "php-fpm & apachectl -D FOREGROUND"]
