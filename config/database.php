@@ -1,10 +1,9 @@
 <?php
 
 return [
-    'host' => 'mysql.railway.internal',
-    'db' => 'railway',
+    'host' => 'localhost',
+    'db' => 'vending_machine',
     'user' => 'root',
-    'pass' => 'TOyOvmLKodzATXompbTxdfCbQSsjHvrJ',
+    'pass' => 'root',
     'charset' => 'utf8mb4'
 ];
-
