@@ -9,6 +9,9 @@ class Database {
             $databaseUrl = getenv('DATABASE_URL');
             $parsedUrl = parse_url($databaseUrl);
             $host = $parsedUrl['host'];
+            if ($host === 'localhost') {
+                $host = '127.0.0.1';
+            }
             $port = $parsedUrl['port'] ?? 3306;
             $db = ltrim($parsedUrl['path'], '/');
             $user = $parsedUrl['user'];
