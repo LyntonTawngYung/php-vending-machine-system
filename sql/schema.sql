@@ -1,6 +1,4 @@
--- Create database
-CREATE DATABASE IF NOT EXISTS vending_machine;
-USE vending_machine;
+-- Database already created by Railway
 
 -- Create products table
 CREATE TABLE products (
