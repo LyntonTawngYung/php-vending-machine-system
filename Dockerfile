@@ -3,9 +3,10 @@ FROM php:8.0-fpm
 # Install Apache
 RUN apt-get update && apt-get install -y apache2 \
     && a2dismod mpm_prefork \
-    && a2enmod mpm_event proxy_fcgi setenvif rewrite
+    && a2enmod mpm_event proxy_fcgi setenvif rewrite \
+    && echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-# Create PHP-FPM Apache config manually
+# PHP-FPM Apache config
 RUN echo '<FilesMatch \.php$>\n\
     SetHandler "proxy:unix:/var/run/php/php-fpm.sock|fcgi://localhost"\n\
 </FilesMatch>' > /etc/apache2/conf-available/php-fpm.conf \
